@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>More React Components</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <style>
+            #container {
+                padding: 50px;
+                background-color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+            const colors = [ "#FF530D", "#E82C0C", "#FF0000", "#E80C7A", "#FF0DFF", "#1E4363", "#FCF2CB", "#FF8926", "#E80C7A", "#BC2D19" ];
+
+            function showCards(colors) {
+                let renderCards = [];
+                for (var i = 0; i < colors.length; i++) {
+                    renderCards.push(<Card key={i} color={colors[i]} />)
+                }
+                return renderCards;
+            }
+            
+            var destination = document.querySelector("#container");
+            class Square extends React.Component {
+                render() {
+                    var squareStyle = {
+                        height: 150,
+                        backgroundColor: this.props.color
+                    };
+                    return (
+                        <div style={squareStyle}>
+                            
+                        </div>
+                    );
+                }
+            }
+            class Label extends React.Component {
+                render() {
+                    var labelStyle = {
+                        fontFamily: "sans-serif",
+                        fontWeight: "bold",
+                        padding: 13,
+                        margin: 0,
+                        textTransform: "uppercase"
+                    };
+                    return (
+                        <p style={labelStyle}>{this.props.color}</p>
+                    );
+                }
+            }
+            class Card extends React.Component {
+                render() {
+                    var cardStyle = {
+                        height: 200,
+                        width: 150,
+                        padding: 0,
+                        backgroundColor: "#fff",
+                        boxShadow: "0px 0px 5px #666",
+                        margin: 10,
+                        display: "inline-block",
+                        borderRadius: "0.5em"
+                    };
+                    return (
+                        <div style={cardStyle}>
+                            <Square color={this.props.color}/>
+                            <Label color={this.props.color}/>
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(
+                <div>
+                    {showCards(colors)} 
+                </div>,
+                destination
+            );
+        </script>
+    </body>
+</html>
