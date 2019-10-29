@@ -1,28 +1,25 @@
 .metronome {
-    text-align: center;
-    max-width: 375px;
-    margin: 0 auto;
-    padding: 30px;
+  text-align: center;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 30px;
 }
 .bpm-slider input {
-    width: 100%;
-    margin: 10px;
+  width: 80%;
+  margin: 10px;
 }
-.metronome button {
-    background: #c94d46;
-    padding: 10px;
-    border: 1px solid #832420;
-    border-radius: 2px;
-    width: 100px;
-    color: #fff;
-    font-size: 18px;
-    margin-top: 20px;
+.metronome .startstop {
+  background: #09bdf6;
+  width: 75px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
 }
-.parameters {
-    margin: 10px auto;
-    display: block;
+.fa-circle {
+  margin: 2px;
 }
-.parameters input[type~="number"]{
-    margin: 0 10px;
-    width: 35px;
+.input {
+  display: flex;
+  justify-content: space-between;
 }
